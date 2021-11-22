@@ -18,11 +18,64 @@
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
-const { conn } = require('./src/db.js');
+
+// const { conn } = require('./src/db.js');
+
+const axios=require('axios');
+
+
+const { Country, conn } = require('./src/db.js')
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
-  server.listen(3001, () => {
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
-  });
-});
+
+const resApi=async()=>{
+
+  try{
+
+    let countries= await axios.get('https://restcountries.com/v3.1/all')
+    .then(res=>{return res.data})
+    .then((countries)=>{
+      let countriesFilter=countries.map(c=>{
+
+        //let {name,cca3,flags,continents,capital,subregion,area,population}=c
+
+        return {name:c.name.common,
+          id:c.cca3,
+          image:c.flags.png,
+          continent:c.region,
+          capital:c.capital?c.capital[0]:'undefined',
+          subregion:c.subregion,
+          area:c.area,
+          population:c.population}
+      })
+      return countriesFilter
+    })
+    
+    await Country.bulkCreate(countries)
+
+
+   
+
+    
+
+  }catch(e){
+
+    console.log(`error ${e}`)
+  }
+
+  
+
+
+
+}
+
+//capital === undefined || capital.lenght < 1 ? 'undefined' : el.capital[0]
+
+
+conn.sync({ force: true }).then(async() => {
+   //let responce=
+   await resApi()
+  // return responce
+}).then(()=>server.listen(3001, () => {console.log('%s listening at 3001')}))
+   // eslint-disable-line no-console
+  
