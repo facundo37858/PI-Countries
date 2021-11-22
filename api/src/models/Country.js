@@ -48,5 +48,7 @@ module.exports = (sequelize) => {
       type:DataTypes.INTEGER,
       defaultValue:null
     }
+  },{
+    timestamps: false
   });
 };
