@@ -40,7 +40,7 @@ module.exports = (sequelize) => {
     },
 
     area:{
-      type:DataTypes.INTEGER,
+      type:DataTypes.FLOAT,
       defaultValue:null
     },
 
