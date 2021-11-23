@@ -2,7 +2,7 @@ const { Router } = require('express');
 
 var express=require('express')
 
-const { home } = require('../controllers/controllers');
+const { getCountries , getDetails} = require('../controllers/controllers');
 
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
@@ -17,7 +17,8 @@ router.use(express.json())
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
 
-router.get('/home',home)
+router.get('/countries',getCountries)
+router.get('/countries/:idCountry',getDetails)
 
 
 
