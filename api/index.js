@@ -76,6 +76,7 @@ conn.sync({ force: true }).then(async() => {
    //let responce=
    await resApi()
   // return responce
-}).then(()=>server.listen(3001, () => {console.log('%s listening at 3001')}))
+})
+.then(()=>server.listen(3001, () => {console.log('%s listening at 3001')}))
    // eslint-disable-line no-console
   
