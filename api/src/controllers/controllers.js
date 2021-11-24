@@ -1,28 +1,70 @@
 
-const { Country} = require('../db.js')
+const { Country, Activity} = require('../db.js')
+
+const sequelize = require('sequelize')
+
+const { Op } = require("sequelize")
 
 
 
 
 async function getCountries(req,res,next){
 
-    try{
+    let {name}=req.query
+    //name=name.charAt(0).toUpperCase() + name.slice(1)
+   //console.log(name)
+    
+    if(name){
 
-        let countriesList=await Country.findAll()
+        try{
 
-        res.json(countriesList)
+            let searchCountry=await Country.findAll({
+
+                where:{
+                    name:{
+                        [Op.startsWith]: name.charAt(0).toUpperCase() + name.slice(1)
+                    }
+                    
+                }
+                
+            })
+            if(searchCountry.length===0){
+
+               return res.send(`not found country while name: ${ name.charAt(0).toUpperCase() + name.slice(1)} `)
+            }
+
+            res.json(searchCountry)
+
+        }catch(e){
+            next(e)
+        }
+    }else{ 
+        
+        try{
+
+            let countriesList=await Country.findAll()
+
+            res.json(countriesList)
 
 
 
-    }catch(e){
-        next(e)
+        }catch(e){
+            next(e)
+        }
+
+
+
+
+
     }
+
+   
 
 
 
     
 
-    res.send('SOY HOOME')
+
 
 
 }
@@ -38,9 +80,18 @@ async function getDetails(req,res,next){
 
             
 
-            let country=await Country.findByPk(idCountry.toUpperCase())
+            let country=await Country.findAll({
+
+                include: [Activity],
+                
+                where:{
+                    id:idCountry.toUpperCase()
+                }
+            })
+
             
-            if(country){
+            
+            if(country.length>0){
 
                return res.json(country)
             }
@@ -62,6 +113,9 @@ async function getDetails(req,res,next){
         next(e)
     }
 }
+
+
+
 
 module.exports={
     getCountries,
