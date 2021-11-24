@@ -3,10 +3,16 @@ const {DataTypes} = require('sequelize');
 module.exports=(sequelize)=>{
 
     sequelize.define('activity',{
-        id:{
+        uid:{
             type: DataTypes.INTEGER,
             primaryKey: true,
+            autoIncrement: true,
+            // type: DataTypes.INTEGER,
+            // primaryKey: true,
+            // autoIncrement: true,
+            unique:true,
             allowNull:false
+
 
         },
 
