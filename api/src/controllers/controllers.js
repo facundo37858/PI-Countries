@@ -120,10 +120,55 @@ async function getDetails(req,res,next){
     }
 }
 
+async function addActivities(req,res,next){
 
+    let {name, difficulty, duration, season, countriesId}=req.body
+
+    console.log(name, difficulty, duration, season, countriesId)
+
+    try{
+
+        if(name){
+            
+            let newActivity={
+            
+                name,
+                difficulty,
+                duration,
+                season
+            }
+
+            await Activity.create(newActivity)
+            .then((newActivity)=>{
+
+             newActivity.addCountry(countriesId)
+
+            })
+            .catch(e=>next(e))
+
+            return res.send('Created.!')
+
+
+
+
+
+
+        }else{
+            res.send(`name is necessary`)
+        }
+
+        
+
+    }catch(e){
+
+        next(e)
+    }
+
+}
 
 
 module.exports={
     getCountries,
     getDetails,
+    addActivities
 }
