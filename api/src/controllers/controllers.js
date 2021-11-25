@@ -82,12 +82,18 @@ async function getDetails(req,res,next){
 
             let country=await Country.findAll({
 
-                include: [Activity],
+                include: [{
+                    model:Activity,
+                    attributes:['name','difficulty','duration','season'],
+                   
+                }],
                 
                 where:{
                     id:idCountry.toUpperCase()
                 }
             })
+
+            
 
             
             
@@ -119,5 +125,5 @@ async function getDetails(req,res,next){
 
 module.exports={
     getCountries,
-    getDetails
+    getDetails,
 }
