@@ -41,7 +41,7 @@ const resApi=async()=>{
 
         return {name:c.name.common,
           id:c.cca3,
-          image:c.flags.png,
+          image:c.flags.svg,
           continent:c.region,
           capital:c.capital?c.capital[0]:'undefined',
           subregion:c.subregion,
