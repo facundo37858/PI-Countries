@@ -1,0 +1,36 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 350px;
+    width: 90%;
+    margin:20px;
+    height: auto;
+    border-radius:20px ;
+    position: relative;
+    border: 2px solid #895b42 ;
+    padding: 10px;
+    padding-bottom:20px ;
+    background-color: #e4e2e0;
+}
+
+.img{
+    height: 200px;
+    width: 90%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    
+}
+
+.name{
+    font-weight: 500;
+    color: salmon;
+    font-size: 25px;
+}
+
+.description{
+    font-weight: 500;
+    color: #ad855b;
+    font-size: 15px;
+
+}
