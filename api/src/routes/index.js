@@ -2,7 +2,7 @@ const { Router } = require('express');
 
 var express=require('express')
 
-const { getCountries , getDetails, addActivities} = require('../controllers/controllers');
+const { getCountries , getDetails, addActivities, getActivities} = require('../controllers/controllers');
 
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
@@ -19,6 +19,7 @@ router.use(express.json())
 
 router.get('/countries',getCountries)
 router.get('/countries/:idCountry',getDetails)
+router.get('/activities',getActivities)
 router.post('/activity',addActivities)
 
 
