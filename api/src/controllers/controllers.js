@@ -166,9 +166,33 @@ async function addActivities(req,res,next){
 
 }
 
+async function getActivities(req,res,next){
+
+    try{
+        let activity=await Activity.findAll()
+
+        if(activity.length>0){
+            return res.json(activity)
+        }else{
+            return res.json(['no activity created'])
+
+        }
+
+        
+    
+
+
+    }catch(e){
+        next(e)
+    }
+}
+
+
+
 
 module.exports={
     getCountries,
     getDetails,
-    addActivities
+    addActivities,
+    getActivities
 }
