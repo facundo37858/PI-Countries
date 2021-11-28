@@ -2,9 +2,10 @@
 
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCountries } from "../../actions";
+import { getActivities, getCountries } from "../../actions";
 import Card from "../Card/Card";
 import NavBar from "../NavBar/NavBar";
+
 
 
 
@@ -18,6 +19,11 @@ export default function Home(){
 
     useEffect(()=>{
         dispach(getCountries())
+    },[dispach])
+
+    useEffect(()=>{
+        dispach(getActivities())
+
     },[dispach])
 
     // console.log(countriesAll)

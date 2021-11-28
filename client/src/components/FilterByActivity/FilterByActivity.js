@@ -1,18 +1,35 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getActivities } from "../../actions";
 
 
 
 
 export default function FilterByActivity(){
 
-    let countriesAllBackup=useSelector(state=>state.countriesBackup)
+    let activities=useSelector(state=>state.activities)
+
+    console.log(activities)
+
+    const activitiesNotRepit=(activities)=>{
+
+        let activitiesNotRepit=new Set(activities.map(activity=>{
+            return activity.name
+        }))
+        return Array.from(activitiesNotRepit).sort()
+    }
+
+    
+
+  
+
+    let notRepitActivitiest=activitiesNotRepit(activities)
 
    
 
 
 
-    return (
+    return(
         
         <div>
             <p><label htmlFor='activity-select'>Filter by Activity</label></p>
@@ -20,10 +37,10 @@ export default function FilterByActivity(){
             <select name='activity'>
                 <option value=''>--Please choose an option--</option>
 
-                {/* {countriesAllBackup.length>0&& Countrycontinents.map((continent,index)=>{
+                {notRepitActivitiest.length>0&& notRepitActivitiest.map((activity,index)=>{
 
-                    return(<option key={index} value={continent}>{continent}</option>)})
-                }     */}
+                    return(<option key={index} value={activity}>{activity}</option>)})
+                }    
                     
                
 
@@ -33,5 +50,5 @@ export default function FilterByActivity(){
             </select>
         </div>
         
-    )
     
+    )}

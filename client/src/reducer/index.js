@@ -1,11 +1,13 @@
 
-import { GET_COUNTRIES, GET_COUNTRY_BY_NAME, FILTER_BY_CONTINENT, FILTER_BY_ACTIVITY} from "../actions/constants";
+import { GET_COUNTRIES, GET_COUNTRY_BY_NAME, FILTER_BY_CONTINENT, FILTER_BY_ACTIVITY, GET_ACTIVITIES} from "../actions/constants";
 
 const initialState={
 
     countriesBackup:[],
 
     countries:[],
+
+    activities:[],
 
     countriesByContinent:[],
 
@@ -34,6 +36,11 @@ export default function rootReducer(state=initialState,action){
                 ...state,
                 countries:state.countriesByContinent
 
+            }
+        case GET_ACTIVITIES:
+            return{
+                ...state,
+                activities:action.payload
             }
         case FILTER_BY_ACTIVITY:
             return{
