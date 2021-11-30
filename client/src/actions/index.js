@@ -66,7 +66,7 @@ export function getActivities(){
     }
 }
 
-export  function FilterByActivity(activity){
+export  function filterByActivity(activity){
 
     return function(dispach){
         return dispach({
