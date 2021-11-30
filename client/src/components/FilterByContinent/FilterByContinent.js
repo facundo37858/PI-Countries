@@ -1,5 +1,6 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { filterByContinent } from "../../actions";
 
 
 
@@ -18,6 +19,21 @@ export default function FilterByContinent(){
 
     const Countrycontinents=continents(countriesAllBackup)
 
+    let dispach=useDispatch()
+
+    const handelFilter=(event)=>{
+
+        event.preventDefault()
+
+        console.log(event.target.value)
+
+        
+
+        dispach(filterByContinent(event.target.value))
+
+
+    }
+
     
 
 
@@ -28,8 +44,10 @@ export default function FilterByContinent(){
         <div>
             <p><label htmlFor='continent-select'>Filter by Continent</label></p>
 
-            <select name='continent'>
-                <option value=''>--Please choose an option--</option>
+            <select name='continent' onChange={e=>handelFilter(e)}>
+                <option value='all'>--Please choose an option--</option>
+
+                <option value='all'>Show All</option>
 
                 {countriesAllBackup.length>0&& Countrycontinents.map((continent,index)=>{
 

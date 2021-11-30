@@ -7,11 +7,9 @@ const initialState={
 
     countries:[],
 
-    activities:[],
+    activities:[]
 
-    countriesByContinent:[],
-
-    countriesByActivity:[]
+  
 
 }
 
@@ -32,9 +30,18 @@ export default function rootReducer(state=initialState,action){
                 countries:action.payload
             }
         case FILTER_BY_CONTINENT:
+
+            let allCountries=state.countriesBackup
+            
+            if(action.payload==='all'){
+                return{
+                    ...state,
+                    countries:state.countriesBackup
+                }
+            }
             return{
                 ...state,
-                countries:state.countriesByContinent
+                countries:allCountries.filter(country=>country.continent===action.payload)
 
             }
         case GET_ACTIVITIES:
