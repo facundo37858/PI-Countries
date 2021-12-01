@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getActivities } from "../../actions";
+import { filterByActivity, getActivities } from "../../actions";
 
 
 
@@ -9,7 +9,7 @@ export default function FilterByActivity(){
 
     let activities=useSelector(state=>state.activities)
 
-    console.log(activities)
+    //console.log(activities)
 
     const activitiesNotRepit=(activities)=>{
 
@@ -25,6 +25,15 @@ export default function FilterByActivity(){
 
     let notRepitActivitiest=activitiesNotRepit(activities)
 
+    let dispach=useDispatch()
+
+    const handelFilter=(e)=>{
+        e.preventDefault()
+        console.log(e.target.value)
+        dispach(filterByActivity(e.target.value))
+
+    }
+
    
 
 
@@ -34,8 +43,8 @@ export default function FilterByActivity(){
         <div>
             <p><label htmlFor='activity-select'>Filter by Activity</label></p>
 
-            <select name='activity'>
-                <option value=''>--Please choose an option--</option>
+            <select name='activity' onChange={(e)=>handelFilter(e)}>
+                <option value='all'>--Please choose an option--</option>
 
                 {notRepitActivitiest.length>0&& notRepitActivitiest.map((activity,index)=>{
 

@@ -25,7 +25,7 @@ export default function FilterByContinent(){
 
         event.preventDefault()
 
-        console.log(event.target.value)
+        //console.log(event.target.value)
 
         
 

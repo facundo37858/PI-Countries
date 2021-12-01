@@ -20,6 +20,8 @@ async function getCountries(req,res,next){
 
             let searchCountry=await Country.findAll({
 
+                include:Activity,
+
                 where:{
                     name:{
                         [Op.startsWith]: name.charAt(0).toUpperCase() + name.slice(1)
@@ -43,6 +45,11 @@ async function getCountries(req,res,next){
         try{
 
             let countriesList=await Country.findAll()
+            let countriesList=await Country.findAll({
+                order:[
+                    
+                    ['name', 'ASC']
+                ],
 
             res.json(countriesList)
 

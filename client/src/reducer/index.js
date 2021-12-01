@@ -50,9 +50,34 @@ export default function rootReducer(state=initialState,action){
                 activities:action.payload
             }
         case FILTER_BY_ACTIVITY:
+
+            let countriesAll=state.countriesBackup
+            
+            // result = data.filter(country => country.activities.some(tour => tour.name === tourism))
+
+            // let filter=[]
+
+            // state.countriesBackup.map(country=>{
+
+            //     country.activities.forEach(e=>{
+
+            //         if(e.name===action.payload){
+            //             filter.push(country)
+            //         }
+            //     })
+                
+            // })
+            // console.log(filter)
+            
+            if(action.payload==='all'){
+                return{
+                    ...state,
+                    countries:state.countriesBackup
+                }
+            }
             return{
                 ...state,
-                countries:state.countriesByActivity
+                countries:countriesAll.filter(country=>country.activities.some(activity=>activity.name===action.payload))
             }
 
 
