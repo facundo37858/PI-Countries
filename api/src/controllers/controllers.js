@@ -45,10 +45,11 @@ async function getCountries(req,res,next){
         try{
 
             let countriesList=await Country.findAll({
-                order:[
+                order: [ [ sequelize.fn('RANDOM') ] ],
+                // order:[
                     
-                    ['name', 'ASC']
-                ],
+                //     ['name', 'ASC']
+                // ],
                 
                 include: {model: Activity}}
             )
