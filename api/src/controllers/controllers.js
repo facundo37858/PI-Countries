@@ -44,12 +44,14 @@ async function getCountries(req,res,next){
         
         try{
 
-            let countriesList=await Country.findAll()
             let countriesList=await Country.findAll({
                 order:[
                     
                     ['name', 'ASC']
                 ],
+                
+                include: {model: Activity}}
+            )
 
             res.json(countriesList)
 
