@@ -39,7 +39,8 @@ const resApi=async()=>{
 
         //let {name,cca3,flags,continents,capital,subregion,area,population}=c
 
-        return {name:c.name.common,
+        return {
+          name:c.name.common.charCodeAt(0)===197 ? 'A'+c.name.common.slice(1):c.name.common,
           id:c.cca3,
           image:c.flags.svg,
           continent:c.region,
