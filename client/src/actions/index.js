@@ -1,6 +1,6 @@
 
 
-import { GET_COUNTRIES, GET_COUNTRY_BY_NAME,GET_ACTIVITIES, FILTER_BY_CONTINENT , FILTER_BY_ACTIVITY}  from "./constants";
+import { GET_COUNTRIES, GET_COUNTRY_BY_NAME,GET_ACTIVITIES, FILTER_BY_CONTINENT , FILTER_BY_ACTIVITY, ORDER}  from "./constants";
 
 import axios from 'axios'
 
@@ -76,4 +76,14 @@ export  function filterByActivity(activity){
     }
 
 
+}
+
+export function order(typeOrder){
+    return function(dispch){
+        
+        return dispch({
+            type:ORDER,
+            payload:typeOrder
+        })
+    }
 }
