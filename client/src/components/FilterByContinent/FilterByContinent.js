@@ -45,7 +45,7 @@ export default function FilterByContinent(){
             <p><label htmlFor='continent-select'>Filter by Continent</label></p>
 
             <select name='continent' onChange={e=>handelFilter(e)}>
-                <option value='all'>--Please choose an option--</option>
+                {/* <option value='all'>--Please choose an option--</option> */}
 
                 <option value='all'>Show All</option>
 
