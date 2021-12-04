@@ -1,3 +1,21 @@
 .home{
     color: #060616;
 }
+
+.navBar{
+    display: grid;
+    grid-template-columns: 1fr 2fr ;
+    grid-template-rows: 0.5fr ;
+}
+
+.filters{
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-rows: 2fr 0.2fr;
+}
+
+.search{
+    display: grid;
+    margin: 30px;
+    grid-auto-columns: auto;
+}

@@ -45,7 +45,7 @@ export default function FilterByActivity(){
 
             <select name='activity' onChange={(e)=>handelFilter(e)}>
                 {/* <option value='all'>--Please choose an option--</option> */}
-                <option value='all'>Show All</option>
+                <option value='all' selected="selected">Show All</option>
 
                 {notRepitActivitiest.length>0&& notRepitActivitiest.map((activity,index)=>{
 

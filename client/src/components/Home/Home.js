@@ -44,9 +44,11 @@ export default function Home(){
 
     const indexOfFirstCountries=indexLastCountries - countriesPerPage
 
-    const currenCountries= countriesAll.slice(indexOfFirstCountries,indexLastCountries)
+    const currenCountries= typeof countriesAll==='string'?countriesAll:countriesAll.slice(indexOfFirstCountries,indexLastCountries)
 
     //cambio de pagina
+
+    // console.log('indexLastCountries:',indexLastCountries,'indexOfFirstCountries:',indexOfFirstCountries,'currenCountries:',currenCountries)
 
     const handelPiginet=(pageNumber)=>{
         setCurrenPage(pageNumber)

@@ -37,6 +37,7 @@ export default function Search(){
 
     return(
         <div>
+            
             <form onSubmit={(e)=>{handleSubmit(e)}}>
 
                 <input 

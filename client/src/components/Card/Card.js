@@ -5,7 +5,7 @@ export default function Card({name,image,continent}){
     return(
         <div className={style.container}>
 
-            <p className={style.name}>Country:{name}</p>
+            <p className={style.name}>{name}</p>
 
             <div className={style.img}>
 

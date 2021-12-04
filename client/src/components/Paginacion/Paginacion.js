@@ -10,7 +10,7 @@ export default function Paginacion({countriesPerPage, totalCountries, handelPigi
 
 
     return(
-        <nav>
+        <nav className={style.footer}>
             <ul className={style.ul}>
             <button onClick={(e)=>{handelPrevPage(e)}}>Prev</button>
                 
