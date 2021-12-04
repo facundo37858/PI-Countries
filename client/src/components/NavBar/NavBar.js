@@ -13,17 +13,24 @@ export default function NavBar(){
 
 
     return(
-        <div>
+        <div className={style.navBar}>
 
             
-            <Link to='/home'><div className={style.home}>Home</div></Link>
-            
-            <Search></Search>
-            <Order/>
 
-            <FilterByContinent></FilterByContinent>
-            <FilterByActivity></FilterByActivity>
-           
+            
+            
+            <Link to='/addActivity'>Add Activity</Link>
+            <div className={style.search}>
+                <Search></Search>
+            </div>
+            <div className={style.filters}>
+                <FilterByContinent></FilterByContinent>
+                <FilterByActivity></FilterByActivity>
+                <Order/>
+            </div>
+            
+
+            
           
 
         </div>
