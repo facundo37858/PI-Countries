@@ -1,9 +1,16 @@
 .form {
     width: 300px;
     margin: 0 auto;
+    
   }
 
 .fieldset{
-    background: cyan;
-    border: 5px solid blue;
+    
+    border: 1px solid black;
+    margin: 20px;
+}
+.legend{
+  background-color: #000;
+  color: #fff;
+  padding: 3px 6px;
 }

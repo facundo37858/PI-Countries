@@ -22,7 +22,7 @@ export default function Order(){
             <p><label htmlFor='select-order'>Order:</label></p>
 
             <select name='order' onChange={(e)=>handelOrder(e)}>
-                <option value='ANY' selected="selected">--Please choose an option--</option>
+                <option value='ANY' defaultValue="selected">--Please choose an option--</option>
                 <option value='ASC'>A-Z</option>
                 <option value='DESC'>Z-A</option>
 

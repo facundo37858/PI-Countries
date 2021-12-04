@@ -47,7 +47,7 @@ export default function FilterByContinent(){
             <select name='continent' onChange={e=>handelFilter(e)}>
                 {/* <option value='all'>--Please choose an option--</option> */}
 
-                <option value='all' selected="selected" >Show All</option>
+                <option value='all' defaultValue="selected" >Show All</option>
 
                 {countriesAllBackup.length>0&& Countrycontinents.map((continent,index)=>{
 
