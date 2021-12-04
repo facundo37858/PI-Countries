@@ -32,7 +32,7 @@ async function getCountries(req,res,next){
             })
             if(searchCountry.length===0){
 
-               return res.send(`not found country while name: ${ name.charAt(0).toUpperCase() + name.slice(1)} `)
+               return res.send(`Not found country while name: ${ name.charAt(0).toUpperCase() + name.slice(1)}`)
             }
 
             res.json(searchCountry)
