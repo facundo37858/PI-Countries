@@ -138,7 +138,7 @@ async function addActivities(req,res,next){
 
     try{
 
-        if(name){
+        if(name && difficulty && duration && season && countriesId.length>0){
             
             let newActivity={
             
@@ -156,7 +156,7 @@ async function addActivities(req,res,next){
             })
             .catch(e=>next(e))
 
-            return res.send('Created.!')
+            return res.send('Activity Created.!')
 
 
 
@@ -164,7 +164,7 @@ async function addActivities(req,res,next){
 
 
         }else{
-            res.send(`name is necessary`)
+            res.send(`Datos incompletos`)
         }
 
         

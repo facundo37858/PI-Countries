@@ -8,7 +8,7 @@ export default function Cards({countries}){
         <div className={style.conteinerCard}>
             {Array.isArray(countries)?countries.map(country=>{
                 return(
-                <Card key={country.id} name={country.name} image={country.image} continent={country.continent}>
+                <Card key={country.id} id={country.id} name={country.name} image={country.image} continent={country.continent}>
                     
                 </Card>)})
                 :

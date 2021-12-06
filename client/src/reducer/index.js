@@ -1,6 +1,6 @@
 
 
-import { GET_COUNTRIES, GET_COUNTRY_BY_NAME, FILTER_BY_CONTINENT, FILTER_BY_ACTIVITY, GET_ACTIVITIES, ORDER} from "../actions/constants";
+import { GET_COUNTRIES, GET_COUNTRY_BY_NAME, FILTER_BY_CONTINENT, FILTER_BY_ACTIVITY, GET_ACTIVITIES, ORDER, POST_ACTIVITY, NEW_ACTIVITY, GET_COUNTRIES_BY_ID} from "../actions/constants";
 
 const initialState={
 
@@ -12,7 +12,11 @@ const initialState={
 
     filterByContinent:[],
 
-    filterByActivity:[]
+    filterByActivity:[],
+
+    countryById:[],
+
+    create:false
 
   
 
@@ -26,7 +30,8 @@ export default function rootReducer(state=initialState,action){
             return{
                 ...state,
                 countriesBackup:action.payload,
-                countries:action.payload
+                countries:action.payload,
+                create:false
                 
             };
         case GET_COUNTRY_BY_NAME:
@@ -151,11 +156,35 @@ export default function rootReducer(state=initialState,action){
                 }
                 
             }
+        case POST_ACTIVITY:
+            if(action.payload){
+                
+                return{
+                    ...state,
+                    create:action.payload
+                }
+            }
+            
+            return{
+                ...state,
+                create:action.payload
+            }
+        case NEW_ACTIVITY:
+            return{
+                ...state,
+                create:false
+            }
+        case GET_COUNTRIES_BY_ID:
+            return{
+                ...state,
+                countryById:action.payload
+            }
+           
            
            
 
 
-            break;
+        
         default:
             return state;
     }

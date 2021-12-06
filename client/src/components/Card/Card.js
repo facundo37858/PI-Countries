@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import style from './styles.module.css'
-export default function Card({name,image,continent}){
+export default function Card({name,image,continent,id}){
     return(
         <div className={style.container}>
 
-            <p className={style.name}>{name}</p>
+            <Link to={`/details/${id}`}><p className={style.name}>{name}</p></Link>
 
             <div className={style.img}>
 

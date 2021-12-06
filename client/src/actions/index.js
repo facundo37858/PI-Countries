@@ -1,6 +1,7 @@
 
 
-import { GET_COUNTRIES, GET_COUNTRY_BY_NAME,GET_ACTIVITIES, FILTER_BY_CONTINENT , FILTER_BY_ACTIVITY, ORDER}  from "./constants";
+import { GET_COUNTRIES, GET_COUNTRY_BY_NAME,GET_ACTIVITIES, FILTER_BY_CONTINENT , 
+    FILTER_BY_ACTIVITY, ORDER, POST_ACTIVITY, NEW_ACTIVITY, GET_COUNTRIES_BY_ID}  from "./constants";
 
 import axios from 'axios'
 
@@ -85,5 +86,62 @@ export function order(typeOrder){
             type:ORDER,
             payload:typeOrder
         })
+    }
+}
+
+export function addActivity(activity){
+    return async function(dispach){
+
+        let addActivity= await axios.post('http://localhost:3001/activity',activity)
+        .then(json=>json.data)
+        console.log('addActivity',addActivity)
+
+        if(addActivity==='Activity Created.!'){
+            return dispach({
+            type:POST_ACTIVITY,
+            payload:true
+            })
+        }else{
+            return dispach({
+                type:POST_ACTIVITY,
+                payload:false
+            })
+        }
+
+
+        
+
+        
+
+
+
+
+        
+    }
+}
+
+export function createNewActivity(){
+
+    return function(dispach){
+        return dispach({
+            type:NEW_ACTIVITY,
+            payload:null
+        })
+    }
+}
+
+export function getCountriesById(id){
+
+    return async function(dispach){
+
+        let countriById= await axios.get(`http://localhost:3001/countries/${id}`)
+        .then(json=>json.data)
+
+        return dispach({
+            type:GET_COUNTRIES_BY_ID,
+            payload:countriById
+        })
+
+
     }
 }
