@@ -4,18 +4,42 @@
 
 .navBar{
     display: grid;
-    grid-template-columns: 1fr 2fr ;
-    grid-template-rows: 0.5fr ;
+    grid-template-columns: 2fr ;
+    grid-template-rows: 30px 100px 100px 30px ;
 }
 
 .filters{
     display: grid;
-    grid-template-columns: 2fr 2fr 2fr;
-    grid-template-rows: 2fr 0.2fr;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    grid-template-rows: 2fr 1fr ;
 }
 
 .search{
     display: grid;
     margin: 30px;
     grid-auto-columns: auto;
+}
+
+.links{
+    display: flex;
+    margin-top: 10px;
+    margin-left:650px ;
+    margin-right: 500px ;
+    
+    text-decoration: none;
+    width: 150px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 20px;
+    border: 1px solid #4e4542;
+    background: #21213c;
+    text-align: center;
+    color: #b9ab99;
+    border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+    
+    
+    text-shadow: 0px 5px 10px #b9ab99;
+ 
+    
 }

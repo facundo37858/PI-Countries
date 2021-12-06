@@ -7,7 +7,7 @@ import { getActivities, getCountries } from "../../actions";
 import Cards from "../Cards/Cards";
 import NavBar from "../NavBar/NavBar";
 import Paginacion from "../Paginacion/Paginacion";
-
+import style from './style.module.css'
 
 
 
@@ -74,6 +74,7 @@ export default function Home(){
     return(
 
         <div>
+            <h1 className={style.title}> Countries App</h1>
             <div>
                 <NavBar></NavBar>
             </div>

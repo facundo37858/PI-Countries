@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { filterByContinent } from "../../actions";
+import style from '../../css/styleFilters.module.css'
 
 
 
@@ -41,10 +42,10 @@ export default function FilterByContinent(){
 
     return (
         
-        <div>
-            <p><label htmlFor='continent-select'>Filter by Continent</label></p>
+        <div className={style.sidebarbox}>
+            <p><label className={style.text} htmlFor='continent-select'>Filter by Continent</label></p>
 
-            <select name='continent' onChange={e=>handelFilter(e)}>
+            <select className={style.styledselect} name='continent' onChange={e=>handelFilter(e)}>
                 {/* <option value='all'>--Please choose an option--</option> */}
 
                 <option value='all' defaultValue="selected" >Show All</option>

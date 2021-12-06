@@ -27,12 +27,12 @@ export default function Details({match}){
                 <h1>{countryById?.name}</h1>
                 <img src={countryById?.image} alt='country flag'/>
                 <ul>
-                    <li key={Math.random()}>{countryById?.id}</li>
-                    <li key={Math.random()}>{countryById?.continent}</li>
-                    <li key={Math.random()+1}>{countryById?.capital}</li>
-                    <li key={Math.random()+5}>{countryById?.subregion}</li>
-                    <li key={Math.random()+8}>{countryById?.area}Km2</li>
-                    <li key={Math.random()+34}>{countryById?.population}</li>
+                    <li >{countryById?.id}</li>
+                    <li  >{countryById?.continent}</li>
+                    <li  >{countryById?.capital}</li>
+                    <li >{countryById?.subregion}</li>
+                    <li >{countryById?.area}Km2</li>
+                    <li >{countryById?.population}</li>
                     
                         <p>Activities</p>
                         {countryById?.activities.length>0?

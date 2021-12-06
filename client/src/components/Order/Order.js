@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch} from "react-redux";
 import { order } from "../../actions";
+import style from '../../css/styleFilters.module.css'
 
 
 export default function Order(){
@@ -18,10 +19,10 @@ export default function Order(){
 
      
     return(
-        <div>
-            <p><label htmlFor='select-order'>Order:</label></p>
+        <div className={style.sidebarbox}>
+            <p><label className={style.text} htmlFor='select-order'>Order</label></p>
 
-            <select name='order' onChange={(e)=>handelOrder(e)}>
+            <select className={style.styledselect} name='order' onChange={(e)=>handelOrder(e)}>
                 <option value='ANY' defaultValue="selected">--Please choose an option--</option>
                 <option value='ASC'>A-Z</option>
                 <option value='DESC'>Z-A</option>

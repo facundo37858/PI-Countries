@@ -1,6 +1,7 @@
 
 
-import { GET_COUNTRIES, GET_COUNTRY_BY_NAME, FILTER_BY_CONTINENT, FILTER_BY_ACTIVITY, GET_ACTIVITIES, ORDER, POST_ACTIVITY, NEW_ACTIVITY, GET_COUNTRIES_BY_ID} from "../actions/constants";
+import { GET_COUNTRIES, GET_COUNTRY_BY_NAME, FILTER_BY_CONTINENT, FILTER_BY_ACTIVITY, GET_ACTIVITIES, ORDER,
+     POST_ACTIVITY, NEW_ACTIVITY, GET_COUNTRIES_BY_ID, ORDER_BY_POPULATION} from "../actions/constants";
 
 const initialState={
 
@@ -178,6 +179,36 @@ export default function rootReducer(state=initialState,action){
             return{
                 ...state,
                 countryById:action.payload
+            }
+        case ORDER_BY_POPULATION:
+
+            if(action.payload==='ASC'){
+                return{
+                    ...state,
+                    countries:state.countries.map((c,i)=>{return {i,value:c.population}}).sort((a,b)=>{
+                        if(a.value > b.value){
+                            return 1
+                        }
+                        if(a.value < b.value){
+                            return -1
+                        }
+                        return 0
+                    }).map(v=>state.countries[v.i])
+                }
+            }
+            if(action.payload==='DESC'){
+                return{
+                    ...state,
+                    countries:state.countries.map((c,i)=>{return {i,value:c.population}}).sort((a,b)=>{
+                        if(a.value > b.value){
+                            return -1
+                        }
+                        if(a.value < b.value){
+                            return 1
+                        }
+                        return 0
+                    }).map(v=>state.countries[v.i])
+                }
             }
            
            

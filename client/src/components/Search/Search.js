@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch} from "react-redux";
 
 import { searchCountry } from "../../actions";
+import style from './style.module.css'
 
 
 export default function Search(){
@@ -36,11 +37,12 @@ export default function Search(){
 
 
     return(
-        <div>
+        <div className={style.wrap}>
             
-            <form onSubmit={(e)=>{handleSubmit(e)}}>
+            <form  className={style.search} onSubmit={(e)=>{handleSubmit(e)}}>
 
-                <input 
+                <input
+                className={style.searchTerm} 
                 type='text'
                 id='country' 
                 autoComplete='off' 
@@ -48,8 +50,8 @@ export default function Search(){
                 placeholder='find country...'
                 onChange={(e)=>handleChange(e)}/>
 
-                <button type='submit' to='/home/search'>Search</button> 
-                <button onClick={(e)=>clearSearch(e)}>Clear Search</button>
+                <button className={style.searchButton} type='submit' to='/home/search'>Search</button> 
+                <button className={style.clearButton} onClick={(e)=>clearSearch(e)}>Clear Search</button>
 
 
             </form>

@@ -40,7 +40,7 @@
 .button:hover {
     background: linear-gradient(to bottom, #21213c 55%, #b9ab99 100%);
     background-color: #b9ab99 ;
-  }
+}
 
 .conteiner{
     display: flex;

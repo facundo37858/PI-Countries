@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import FilterByActivity from "../FilterByActivity/FilterByActivity";
 import FilterByContinent from "../FilterByContinent/FilterByContinent";
 import Order from "../Order/Order";
+import OrderByPopulation from "../OrderByPopulation/OrderByPopulation";
 import Search from "../Search/Search";
 
 import style from './style.module.css'
@@ -18,8 +19,10 @@ export default function NavBar(){
             
 
             
+            <div  >
+                <Link  to='/addActivity'><button className={style.links}>Add Activity</button></Link>
+            </div>
             
-            <Link to='/addActivity'>Add Activity</Link>
             <div className={style.search}>
                 <Search></Search>
             </div>
@@ -27,6 +30,7 @@ export default function NavBar(){
                 <FilterByContinent></FilterByContinent>
                 <FilterByActivity></FilterByActivity>
                 <Order/>
+                <OrderByPopulation></OrderByPopulation>
             </div>
             
 
