@@ -6,7 +6,7 @@ import style from '../../css/styleFilters.module.css'
 
 
 
-export default function FilterByActivity(){
+export default function FilterByActivity({handelPiginet}){
 
     let activities=useSelector(state=>state.activities)
 
@@ -30,8 +30,9 @@ export default function FilterByActivity(){
 
     const handelFilter=(e)=>{
         e.preventDefault()
-        console.log(e.target.value)
+        //console.log(e.target.value)
         dispach(filterByActivity(e.target.value))
+        handelPiginet(1)
 
     }
 

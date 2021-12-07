@@ -6,11 +6,12 @@ import FilterByActivity from "../FilterByActivity/FilterByActivity";
 import FilterByContinent from "../FilterByContinent/FilterByContinent";
 import Order from "../Order/Order";
 import OrderByPopulation from "../OrderByPopulation/OrderByPopulation";
+import Paginacion from "../Paginacion/Paginacion";
 import Search from "../Search/Search";
 
 import style from './style.module.css'
 
-export default function NavBar(){
+export default function NavBar({handelPiginet}){
 
 
     return(
@@ -27,8 +28,8 @@ export default function NavBar(){
                 <Search></Search>
             </div>
             <div className={style.filters}>
-                <FilterByContinent></FilterByContinent>
-                <FilterByActivity></FilterByActivity>
+                <FilterByContinent handelPiginet={handelPiginet}></FilterByContinent>
+                <FilterByActivity handelPiginet={handelPiginet}></FilterByActivity>
                 <Order/>
                 <OrderByPopulation></OrderByPopulation>
             </div>

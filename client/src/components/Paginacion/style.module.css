@@ -8,6 +8,36 @@
     display:inline;
     padding-left:3px;
     padding-right:3px;
-   background-color:black;
+   background-color:#b9ab99;
 }
 
+.buttonNum{
+    border-radius: 100%;
+    border: 1px solid #1b2428;
+    background: #21213c;
+    text-align: center;
+    
+    cursor: pointer;
+    font-size: 15px;
+    color: #b9ab99;
+    
+}
+.buttonNext{
+    
+    border: 1px solid #1b2428;
+    background: #21213c;
+    text-align: center;
+    
+    cursor: pointer;
+    font-size: 15px;
+    color: #b9ab99;
+    
+}
+.buttonNext:hover {
+    background: linear-gradient(to bottom, #21213c 55%, #b9ab99 100%);
+    background-color: #b9ab99 ;
+}
+.buttonNum:hover {
+    background: linear-gradient(to bottom, #21213c 55%, #b9ab99 100%);
+    background-color: #b9ab99 ;
+}

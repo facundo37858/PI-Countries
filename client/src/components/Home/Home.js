@@ -27,6 +27,7 @@ export default function Home(){
 
     useEffect(()=>{
         dispach(getCountries())
+        
     },[dispach])
 
     useEffect(()=>{
@@ -40,7 +41,7 @@ export default function Home(){
 
     const indexLastCountries=currenPage * countriesPerPage
 
-    //console.log(Math.ceil(countriesAll.length/countriesPerPage))
+    console.log(Math.ceil(countriesAll.length/countriesPerPage))
 
     const indexOfFirstCountries=indexLastCountries - countriesPerPage
 
@@ -48,10 +49,17 @@ export default function Home(){
 
     //cambio de pagina
 
-    // console.log('indexLastCountries:',indexLastCountries,'indexOfFirstCountries:',indexOfFirstCountries,'currenCountries:',currenCountries)
+     console.log('indexLastCountries:',indexLastCountries,'indexOfFirstCountries:',indexOfFirstCountries,'currenCountries:',currenCountries)
 
     const handelPiginet=(pageNumber)=>{
+
+       
+
+       
+           
+       
         setCurrenPage(pageNumber)
+        
 
     }
     const handelPrevPage=(e)=>{
@@ -76,9 +84,10 @@ export default function Home(){
         <div>
             <h1 className={style.title}> Countries App</h1>
             <div>
-                <NavBar></NavBar>
+                <NavBar handelPiginet={handelPiginet}></NavBar>
             </div>
             <div>
+                
                <Cards countries={currenCountries}></Cards>
             </div>
             <div>

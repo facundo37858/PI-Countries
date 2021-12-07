@@ -6,7 +6,7 @@ import style from '../../css/styleFilters.module.css'
 
 
 
-export default function FilterByContinent(){
+export default function FilterByContinent({handelPiginet}){
 
     let countriesAllBackup=useSelector(state=>state.countriesBackup)
 
@@ -31,6 +31,8 @@ export default function FilterByContinent(){
         
 
         dispach(filterByContinent(event.target.value))
+
+        handelPiginet(1)
 
 
     }

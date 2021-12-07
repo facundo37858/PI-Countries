@@ -4,6 +4,8 @@ export default function Paginacion({countriesPerPage, totalCountries, handelPigi
     
     const pegeNumbers=[]
 
+    
+
     for(let i=1;i<=Math.ceil(totalCountries/countriesPerPage);i++){
         pegeNumbers.push(i)
     }
@@ -12,16 +14,16 @@ export default function Paginacion({countriesPerPage, totalCountries, handelPigi
     return(
         <nav className={style.footer}>
             <ul className={style.ul}>
-            <button onClick={(e)=>{handelPrevPage(e)}}>Prev</button>
+            <button className={style.buttonNext} onClick={(e)=>{handelPrevPage(e)}}>Prev</button>
                 
                 {pegeNumbers.map(num=>{
                     return(
                         <li  key={num}className={style.li}>
-                            <button onClick={()=>handelPiginet(num)}>{num}</button>
+                            <button className={style.buttonNum} onClick={()=>handelPiginet(num)}>{num}</button>
                         </li>
                     )
                 })}
-                <button onClick={(e)=>{handelNextPage(e)}}>Next</button>
+                <button  className={style.buttonNext} onClick={(e)=>{handelNextPage(e)}}>Next</button>
             </ul>
 
         </nav>

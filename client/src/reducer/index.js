@@ -34,11 +34,35 @@ export default function rootReducer(state=initialState,action){
                 countries:action.payload,
                 create:false
                 
-            };
+            }
         case GET_COUNTRY_BY_NAME:
             return{
                 ...state,
                 countries:action.payload
+            }        
+        case GET_ACTIVITIES:
+            return{
+                ...state,
+                activities:action.payload
+            }
+
+        case GET_COUNTRIES_BY_ID:
+            return{
+                ...state,
+                countryById:action.payload
+            }    
+        case POST_ACTIVITY:
+            if(action.payload){
+                
+                return{
+                    ...state,
+                    create:action.payload
+                }
+            }
+            
+            return{
+                ...state,
+                create:action.payload
             }
         case FILTER_BY_CONTINENT:
 
@@ -64,31 +88,12 @@ export default function rootReducer(state=initialState,action){
                 filterByContinent:state.countriesBackup.filter(country=>country.continent===action.payload)
 
             }
-        case GET_ACTIVITIES:
-            return{
-                ...state,
-                activities:action.payload
-            }
+
         case FILTER_BY_ACTIVITY:
 
             let countriesAll=state.countriesBackup
             
-            // result = data.filter(country => country.activities.some(tour => tour.name === tourism))
-
-            // let filter=[]
-
-            // state.countriesBackup.map(country=>{
-
-            //     country.activities.forEach(e=>{
-
-            //         if(e.name===action.payload){
-            //             filter.push(country)
-            //         }
-            //     })
-                
-            // })
-            // console.log(filter)
-            
+                        
             if(action.payload==='all'){
                 return{
                     ...state,
@@ -157,59 +162,58 @@ export default function rootReducer(state=initialState,action){
                 }
                 
             }
-        case POST_ACTIVITY:
-            if(action.payload){
+
+        case ORDER_BY_POPULATION:
+            if(action.payload==='ANY'){
+                
                 
                 return{
                     ...state,
-                    create:action.payload
+                    countries:state.countriesBackup
                 }
+                
             }
-            
-            return{
-                ...state,
-                create:action.payload
+
+                if(action.payload==='ASC'){
+                    return{
+                        ...state,
+                        countries:state.countries.map((c,i)=>{return {i,value:c.population}}).sort((a,b)=>{
+                            if(a.value > b.value){
+                                return 1
+                            }
+                            if(a.value < b.value){
+                                return -1
+                            }
+                            return 0
+                        }).map(v=>state.countries[v.i])
+                    }
+                }
+                if(action.payload==='DESC'){
+                    return{
+                        ...state,
+                        countries:state.countries.map((c,i)=>{return {i,value:c.population}}).sort((a,b)=>{
+                            if(a.value > b.value){
+                                return -1
+                            }
+                            if(a.value < b.value){
+                                return 1
+                            }
+                            return 0
+                        }).map(v=>state.countries[v.i])
+                }            
+                
             }
+
+
+
+
         case NEW_ACTIVITY:
             return{
                 ...state,
                 create:false
             }
-        case GET_COUNTRIES_BY_ID:
-            return{
-                ...state,
-                countryById:action.payload
-            }
-        case ORDER_BY_POPULATION:
 
-            if(action.payload==='ASC'){
-                return{
-                    ...state,
-                    countries:state.countries.map((c,i)=>{return {i,value:c.population}}).sort((a,b)=>{
-                        if(a.value > b.value){
-                            return 1
-                        }
-                        if(a.value < b.value){
-                            return -1
-                        }
-                        return 0
-                    }).map(v=>state.countries[v.i])
-                }
-            }
-            if(action.payload==='DESC'){
-                return{
-                    ...state,
-                    countries:state.countries.map((c,i)=>{return {i,value:c.population}}).sort((a,b)=>{
-                        if(a.value > b.value){
-                            return -1
-                        }
-                        if(a.value < b.value){
-                            return 1
-                        }
-                        return 0
-                    }).map(v=>state.countries[v.i])
-                }
-            }
+       
            
            
            
