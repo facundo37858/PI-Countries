@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addActivity, createNewActivity, getCountries } from "../../actions";
 import style from './style.module.css'
-import { useHistory } from "react-router";
+import style2 from '../../css/styleFilters.module.css'
+
 
 export default function Form(){
 
@@ -12,7 +13,7 @@ export default function Form(){
     let createState=useSelector(state=>state.create)
 
 
-    let history=useHistory()
+    
 
     
 
@@ -158,15 +159,19 @@ export default function Form(){
 
     return(
         <div>
+            <h1 className={style.title}>Create Activity</h1>
             <div>
-                <Link to='/home'><div >Home</div></Link>
+                <Link style={{ textDecoration: 'none' }} to='/home'><button className={style.buttonHome}>Home</button></Link>
             </div>
-            {createState?<div>Created Activity
-                <button onClick={handelCreate}>Created New Activity</button> 
+            {createState?<div>
+                
+                <p className={style.text3}>Created Activity!!!!</p>
+                <button className={style.buttonNewActivity} onClick={handelCreate}>Add New Activity</button> 
             </div>:
             <form className={style.form} >
 
-                Name Activity:<input onChange={(e)=>{handelInputs(e)}} key='nameActivity' id='name' name='name' type='text' placeholder='Activity Name...' value={input.name}>
+                <p className={style.text}>Name Activity</p>
+                <input className={style.inputs} onChange={(e)=>{handelInputs(e)}} key='nameActivity' id='name' name='name' type='text' placeholder='Activity Name...' value={input.name}>
                     
                 </input>{errors.name?<span className={style.danger}>{errors.name}</span>:null}
                 
@@ -220,15 +225,16 @@ export default function Form(){
                 
                 <div>
                     
-                    Duration:<input key='duration' onChange={(e)=>handelInputs(e)} type='number' id='duration' name='duration' placeholder='Duration ...' value={input.duration} ></input><label>min</label>
+                    <p className={style.text}>Duration</p>
+                    <input className={style.inputs} min="1"  key='duration' onChange={(e)=>handelInputs(e)} type='number' id='duration' name='duration' placeholder='Duration ...' value={input.duration} ></input><label className={style.text2}>min</label>
                     
                     
                 </div>{errors.duration?<span className={style.danger}>{errors.duration}</span>:null} 
 
-                <div>
-                    <p><label htmlFor='activity-select'> Please choose Country:</label></p>
+                <div className={style2.sidebarbox}>
+                    <p><label className={style.text} htmlFor='activity-select'> Please choose Country:</label></p>
 
-                    <select name='countriesId' onChange={handelSelect} >
+                    <select className={style2.styledselect} name='countriesId' onChange={handelSelect} >
                     
                         <option value='all' defaultValue="selected">Choose Country...</option>
 
@@ -244,11 +250,11 @@ export default function Form(){
                     </select>
                 </div>
                 <ul>
-                    <p>Countries:</p>
+                    <p className={style.text}>Countries:</p>
                     {input.countriesId.length>0?
                             filtradoCountrie(countries,input.countriesId).map((c,i)=>{
                                 return(
-                                    <li  key={i}>{c.name} {c.id} <button id={c.id} onClick={(e)=>handelDelete(e)}>X</button></li>
+                                   <p className={style.text2} key={i}>{c.name} ({c.id}) <button className={style.buttonDelete} id={c.id} onClick={(e)=>handelDelete(e)}>X</button></p>
                                 )
                             }):<p className={style.danger}>Add not Countries</p>
                         
@@ -259,7 +265,7 @@ export default function Form(){
                     }
                 </ul>
 
-                <button  onClick={handelSubmit}>Add Activity</button>
+                <button className={style.buttonAdd} onClick={handelSubmit}>Add Activity</button>
 
 
                 

@@ -19,8 +19,8 @@ export default function NavBar(){
             
 
             
-            <div  >
-                <Link  to='/addActivity'><button className={style.links}>Add Activity</button></Link>
+            <div >
+                <Link style={{ textDecoration: 'none' }} to='/addActivity'><button className={style.links}>Add Activity</button></Link>
             </div>
             
             <div className={style.search}>

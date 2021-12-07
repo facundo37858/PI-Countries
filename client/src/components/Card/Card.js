@@ -6,7 +6,7 @@ export default function Card({name,image,continent,id}){
     return(
         <div className={style.container}>
 
-            <Link to={`/details/${id}`}><p className={style.name}>{name}</p></Link>
+            <Link to={`/details/${id}`}  style={{ textDecoration: 'none' }}><p className={style.name}>{name}</p></Link>
 
             <div className={style.img}>
 
@@ -16,7 +16,7 @@ export default function Card({name,image,continent,id}){
             
             
             
-            <p className={style.description}>Continent:{continent}</p>
+            <p className={style.description}>{continent}</p>
                
             
 

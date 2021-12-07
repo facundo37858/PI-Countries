@@ -6,16 +6,142 @@
 
 .fieldset{
     
-    border: 1px solid black;
+    border: 1px solid #060616;
     margin: 20px;
 }
 .legend{
-  background-color: #000;
-  color: #fff;
+  background-color: #060616;
+  color: #b9ab99;
   padding: 3px 6px;
 }
 
 .danger{
   color: red;
   font-size: 15px;
+}
+.buttonHome{
+  display: flex;
+  margin-top: 10px;
+  margin-left:650px ;
+  margin-right: 650px ;
+  margin-bottom: 20px;
+  
+  text-decoration: none;
+  width: 75px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 20px;
+  border: 1px solid #4e4542;
+  background: #21213c;
+  text-align: center;
+  color: #b9ab99;
+  border-radius: 5px 5px 5px 5px;
+  cursor: pointer;
+  
+  
+  text-shadow: 0px 5px 10px #b9ab99;
+
+}
+.title{
+  color: #b9ab99;
+  font-family: inherit;
+  text-shadow: 0px 2px 12px #b9ab99;
+  font-weight: 600;
+  font-size: 50px;
+  margin: 10px;
+  padding: 10px;
+  align-content: center;
+}
+
+.text{
+  color: #b9ab99;
+  font-family: inherit;
+  text-shadow: 0px 2px 12px #b9ab99;
+  font-weight: 400;
+  font-size: 25px;
+  margin: 1px;
+  padding: 1px;
+  align-content: center;
+}
+.text2{
+  color: #b9ab99;
+  font-family: inherit;
+  text-shadow: 0px 2px 12px #b9ab99;
+  font-weight: 600;
+  font-size: 15px;
+  margin: 1px;
+  padding: 1px;
+  align-content: center;
+}
+.buttonAdd{
+  width: 150px;
+  height: 50px;
+  border: 1px solid #1b2428;
+  background: #21213c;
+  text-align: center;
+  
+  border-radius: 5px 5px 5px 5px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #b9ab99;
+  text-shadow: 0px 5px 10px #b9ab99;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-weight: 600;
+
+}
+.buttonAdd:hover {
+  background: linear-gradient(to bottom, #21213c 55%, #b9ab99 100%);
+  background-color: #b9ab99 ;
+}
+
+.inputs{
+  width: 150px;
+  border: 3px solid #1b2428;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+  color: #060616;
+}
+
+.buttonDelete{
+  border-radius: 100%;
+  border: 1px solid #1b2428;
+  background: #21213c;
+  text-align: center;
+  
+  cursor: pointer;
+  font-size: 15px;
+  color: #b9ab99;
+  
+}
+.buttonNewActivity{
+
+  width: 200px;
+  height: 50px;
+  border: 1px solid #1b2428;
+  background: #21213c;
+  text-align: center;
+  
+  border-radius: 5px 5px 5px 5px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #b9ab99;
+  text-shadow: 0px 5px 10px #b9ab99;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-weight: 600;
+
+}
+
+.text3{
+  color: #b9ab99;
+  font-family: inherit;
+  text-shadow: 0px 2px 12px #b9ab99;
+  font-weight: 400;
+  font-size: 35px;
+  margin: 10px;
+  padding: 10px;
+  align-content: center;
 }

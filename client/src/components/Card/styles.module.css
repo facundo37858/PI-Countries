@@ -8,10 +8,10 @@
     height: auto;
     border-radius:20px ;
     position: relative;
-    border: 2px solid #895b42 ;
+    border: 2px solid #21213c ;
     padding: 10px;
     padding-bottom:20px ;
-    background-color: #e4e2e0;
+    background-color: #1b2428;
 }
 
 .img{
@@ -22,15 +22,28 @@
     
 }
 
-.name{
+.name2{
     font-weight: 500;
-    color: salmon;
+    color: #b9ab99;
     font-size: 25px;
 }
 
 .description{
     font-weight: 500;
-    color: #ad855b;
-    font-size: 15px;
+    color: #b9ab99;
+    font-size: 20px;
 
+}
+
+.name {
+    color: #b9ab99;
+    font-family: inherit;
+    text-shadow: 0px 2px 12px #b9ab99;
+    font-weight: 600;
+    font-size: 30px;
+    margin: 20px;
+    padding: 20px;
+    align-content: center;
+    text-decoration: none;
+    
 }
