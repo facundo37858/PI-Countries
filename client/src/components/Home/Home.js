@@ -39,9 +39,9 @@ export default function Home(){
 
     //obtengo los countries actuales
 
-    const indexLastCountries=currenPage * countriesPerPage
+    const indexLastCountries=currenPage * countriesPerPage//indice del ultimo pais 
 
-    console.log(Math.ceil(countriesAll.length/countriesPerPage))
+    //console.log(Math.ceil(countriesAll.length/countriesPerPage))
 
     const indexOfFirstCountries=indexLastCountries - countriesPerPage
 
@@ -49,7 +49,7 @@ export default function Home(){
 
     //cambio de pagina
 
-     console.log('indexLastCountries:',indexLastCountries,'indexOfFirstCountries:',indexOfFirstCountries,'currenCountries:',currenCountries)
+     //console.log('indexLastCountries:',indexLastCountries,'indexOfFirstCountries:',indexOfFirstCountries,'currenCountries:',currenCountries)
 
     const handelPiginet=(pageNumber)=>{
 

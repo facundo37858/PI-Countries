@@ -46,13 +46,10 @@ async function getCountries(req,res,next){
 
             let countriesList=await Country.findAll({
                 order: [ [ sequelize.fn('RANDOM') ] ],
-                // order:[
-                    
-                //     ['name', 'ASC']
-                // ],
                 
-                include: {model: Activity}}
-            )
+                
+                include: {model: Activity}
+            })
 
             res.json(countriesList)
 
@@ -83,7 +80,7 @@ async function getDetails(req,res,next){
 
     let {idCountry}=req.params
 
-    console.log( typeof idCountry, idCountry)
+    // console.log( typeof idCountry, idCountry)
 
     try{
         if(idCountry){
@@ -134,7 +131,7 @@ async function addActivities(req,res,next){
 
     let {name, difficulty, duration, season, countriesId}=req.body
 
-    console.log(name, difficulty, duration, season, countriesId)
+    // console.log(name, difficulty, duration, season, countriesId)
 
     try{
 

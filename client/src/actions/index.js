@@ -1,7 +1,8 @@
 
 
 import { GET_COUNTRIES, GET_COUNTRY_BY_NAME,GET_ACTIVITIES, FILTER_BY_CONTINENT , 
-    FILTER_BY_ACTIVITY, ORDER, POST_ACTIVITY, NEW_ACTIVITY, GET_COUNTRIES_BY_ID, ORDER_BY_POPULATION}  from "./constants";
+    FILTER_BY_ACTIVITY, ORDER, POST_ACTIVITY, NEW_ACTIVITY, GET_COUNTRIES_BY_ID, ORDER_BY_POPULATION,
+ORDER_BY_AREA}  from "./constants";
 
 import axios from 'axios'
 
@@ -153,4 +154,17 @@ export function orderByPopulation(order){
             payload:order
         })
     }
+}
+
+export function orderByArea(type){
+    return function(dispach){
+        return dispach({
+            type:ORDER_BY_AREA,
+            payload:type
+        })
+        
+    }
+
+    
+
 }

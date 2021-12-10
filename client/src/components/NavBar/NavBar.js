@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 import FilterByActivity from "../FilterByActivity/FilterByActivity";
 import FilterByContinent from "../FilterByContinent/FilterByContinent";
 import Order from "../Order/Order";
+import OrderByArea from "../OrderByArea/OederByArea";
 import OrderByPopulation from "../OrderByPopulation/OrderByPopulation";
-import Paginacion from "../Paginacion/Paginacion";
+
 import Search from "../Search/Search";
 
 import style from './style.module.css'
@@ -31,7 +32,8 @@ export default function NavBar({handelPiginet}){
                 <FilterByContinent handelPiginet={handelPiginet}></FilterByContinent>
                 <FilterByActivity handelPiginet={handelPiginet}></FilterByActivity>
                 <Order/>
-                <OrderByPopulation></OrderByPopulation>
+                <OrderByPopulation></OrderByPopulation> 
+                <OrderByArea></OrderByArea>
             </div>
             
 

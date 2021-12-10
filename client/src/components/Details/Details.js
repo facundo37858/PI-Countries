@@ -17,7 +17,7 @@ export default function Details({match}){
 
     useEffect(()=>{
         dispatch(getCountriesById(match.params.id))
-    },[dispatch])
+    },[dispatch,match.params.id])
 
     return(
         <div className={style.contenedor}>

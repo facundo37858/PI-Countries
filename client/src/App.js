@@ -1,6 +1,6 @@
 
 import { Route, Switch } from 'react-router-dom';
-import { BrowserRouter } from 'react-router-dom';
+
 import './App.css';
 import Details from './components/Details/Details';
 
@@ -12,7 +12,7 @@ import Login from './components/Login/Login';
 
 function App() {
   return (
-  <BrowserRouter>
+  
     <div className="App">
       
       <Switch>
@@ -26,7 +26,7 @@ function App() {
       </Switch>
       
     </div>
-  </BrowserRouter>
+ 
   );
 }
 
