@@ -21,20 +21,20 @@ export default function NavBar({handelPiginet}){
             
 
             
-            <div >
-                <Link style={{ textDecoration: 'none' }} to='/addActivity'><button className={style.links}>Add Activity</button></Link>
+            <div className={style.conteinerButton}>
+                <Link style={{ textDecoration: 'none' }} to='/addActivity'><button className={style.links2}>Add Activity</button></Link>
             </div>
             
             <div className={style.search}>
                 <Search></Search>
             </div>
-            <div className={style.filters}>
+            { <div className={style.filters}>
                 <FilterByContinent handelPiginet={handelPiginet}></FilterByContinent>
                 <FilterByActivity handelPiginet={handelPiginet}></FilterByActivity>
                 <Order/>
                 <OrderByPopulation></OrderByPopulation> 
-                <OrderByArea></OrderByArea>
-            </div>
+                {/* <OrderByArea></OrderByArea> */}
+            </div> }
             
 
             

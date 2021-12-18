@@ -82,7 +82,7 @@ export default function Home(){
     return(
 
         <div>
-            <h1 className={style.title}> Countries App</h1>
+            <h1 className={style.title}> Countries</h1>
             <div>
                 <NavBar handelPiginet={handelPiginet}></NavBar>
             </div>

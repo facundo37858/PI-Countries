@@ -20,7 +20,7 @@ export default function Order(){
      
     return(
         <div className={style.sidebarbox}>
-            <p><label className={style.text} htmlFor='select-order'>Order</label></p>
+            <p><label className={style.text} htmlFor='select-order'>Alphabetical Order</label></p>
 
             <select className={style.styledselect} name='order' onChange={(e)=>handelOrder(e)}>
                 <option value='ANY' defaultValue="selected">--Please choose an option--</option>

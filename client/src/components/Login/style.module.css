@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&display=swap');
 
 .img {
 
@@ -25,8 +25,8 @@
     display: inline-block;
     cursor: pointer;
     color: #e4e2e0;
-    font-family: inherit;
-    font-size: 25px;
+    font-family:'Inspiration', cursive;
+    font-size: 80px;
     font-weight: bold;
     font-style: italic;
     padding: 7px 30px;
@@ -34,7 +34,8 @@
     text-decoration: none;
     text-shadow: 0px 1px 0px #b9ab99 ;
     margin-left: 20px;
-    max-width: 200px;
+    max-width: 300px;
+    -webkit-text-stroke: 0.1px #060616;
 }
 
 .button:hover {
@@ -46,17 +47,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     
 }
 
 .title {
     color: #b9ab99;
-    font-family: inherit;
+    font-family:'Inspiration', cursive;
     text-shadow: 0px 5px 10px #b9ab99;
     font-weight: 800;
-    font-size: 60px;
+    font-size: 200px;
     margin: 20px;
     padding: 20px;
     align-content: center;
+    -webkit-text-stroke: 0.1px #060616;
     
 }
