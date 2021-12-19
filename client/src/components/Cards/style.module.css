@@ -1,25 +1,11 @@
 
-.conteinerCard3{
-    
-    display: grid;
-    
-    height: 98vh;
-    
-    grid-template-areas: "header header" 
-    "siderbar  main"
-    "footer  footer";
-    
-    grid-template-rows: 80px 1fr 80px;
-    
-    grid-template-columns: 300px 1fr;
-    
-}
-    
 .conteinerCard{
-    display: grid;
-    grid-template-columns: 2fr 2fr 2fr;
-    margin-top: 200px;
+display: grid;
+justify-content: center;
+margin-top: 100px;
+gap: 10px;
 }
+
 
 .text{
     display: flex;

@@ -163,73 +163,83 @@ export default function Form(){
             <div>
                 <Link style={{ textDecoration: 'none' }} to='/home'><button className={style.buttonHome}>Home</button></Link>
             </div>
-            {createState?<div>
+            {createState?
+
+            <div>
                 
                 <p className={style.text3}>Created Activity!!!!</p>
                 <button className={style.buttonNewActivity} onClick={handelCreate}>Add New Activity</button> 
             </div>:
+
             <form className={style.form} >
 
-                <p className={style.text}>Name Activity</p>
-                <input className={style.inputs} onChange={(e)=>{handelInputs(e)}} key='nameActivity' id='name' name='name' type='text' placeholder='Activity Name...' value={input.name}>
-                    
-                </input>{errors.name?<span className={style.danger}>{errors.name}</span>:null}
+
+                <div>
+                    <label className={style.text}>Name Activity </label>
                 
+                    <input className={style.inputs} onChange={(e)=>{handelInputs(e)}} key='nameActivity' id='name' name='name' type='text' placeholder='Activity Name...' value={input.name}>
+                    
+                    </input>
+                </div>{errors.name?<span className={style.danger}>{errors.name}</span>:null}
+
+                <div>
+                    
+                    <label className={style.text}>Duration </label>
+                    <input className={style.inputs} min="1"  key='duration' onChange={(e)=>handelInputs(e)} type='number' id='duration' name='duration' placeholder='Duration ...' value={input.duration} ></input><label className={style.text2}>min</label>
+                    
+                    
+                </div>{errors.duration?<span className={style.danger}>{errors.duration}</span>:null} 
+
                 <fieldset className={style.fieldset} >
                     <legend className={style.legend}>Choose Dificulty to Activity</legend>
-                        <div>
+                        <lebel className={style.label}>
                             1<input key='dificulty1'   onClick={(e)=>handelInputs(e)} name='difficulty' type='radio' id='dificulty1' value='1'></input>
                             
-                        </div>
-                        <div>
+                        </lebel>
+                        <lebel className={style.label}>
                             2<input key='dificulty2' onClick={(e)=>handelInputs(e)} name='difficulty' type='radio' id='dificulty2' value='2'></input>
                             
-                        </div>
-                        <div>
-                            <label>3</label><input key='dificulty3' onClick={(e)=>handelInputs(e)} name='difficulty' type='radio' id='dificulty3' value='3'></input>
+                        </lebel>
+                        <lebel className={style.label}>
+                            3<input key='dificulty3' onClick={(e)=>handelInputs(e)} name='difficulty' type='radio' id='dificulty3' value='3'></input>
                             
-                        </div>
-                        <div>
+                        </lebel>
+                        <lebel className={style.label}>
                             4<input key='dificulty4' onClick={(e)=>handelInputs(e)} name='difficulty' type='radio' id='dificulty4' value='4'></input>
                             
-                        </div>
-                        <div>
+                        </lebel>
+                        <lebel className={style.label}>
                             5<input key='dificulty5' onClick={(e)=>handelInputs(e)} name='difficulty' type='radio' id='dificulty5' value='5'></input>
                             
-                        </div>
+                        </lebel>
                         {errors.difficulty?<span className={style.danger}>{errors.difficulty}</span>:null}
                 </fieldset>
+
                 <fieldset className={style.fieldset}>
                     <legend className={style.legend}>Choose Season</legend>
-                        <div>
+                        <label className={style.label}>
                             Spring<input  onChange={(e)=>handelInputs(e)} key='seasonActivitySp' name='season' type='radio' id='seasonSp' value='spring'></input>
                             
-                        </div>
-                        <div>
+                        </label>
+                        <label className={style.label}>
                             Summer<input onChange={(e)=>handelInputs(e)} key='seasonActivityS' name='season' type='radio' id='seasonS' value='summer'></input>
                             
-                        </div>
-                        <div>
+                        </label>
+                        <label className={style.label}>
                             Autumn<input onChange={(e)=>handelInputs(e)} key='seasonActivityA' name='season' type='radio' id='seasonA' value='autumn'></input>
                             
-                        </div>
-                        <div>
+                        </label>
+                        <label className={style.label}>
                             Winter<input  onChange={(e)=>handelInputs(e)} key='seasonActivityW' name='season' type='radio' id='seasonW' value='winter'></input>
                             
-                        </div>
+                        </label>
                         
                       {errors.season?<span className={style.danger}>{errors.season}</span>:null}
                         
                         
                 </fieldset>
                 
-                <div>
-                    
-                    <p className={style.text}>Duration</p>
-                    <input className={style.inputs} min="1"  key='duration' onChange={(e)=>handelInputs(e)} type='number' id='duration' name='duration' placeholder='Duration ...' value={input.duration} ></input><label className={style.text2}>min</label>
-                    
-                    
-                </div>{errors.duration?<span className={style.danger}>{errors.duration}</span>:null} 
+
 
                 <div className={style2.sidebarbox}>
                     <p><label className={style.text} htmlFor='activity-select'> Please choose Country:</label></p>
@@ -249,6 +259,7 @@ export default function Form(){
 
                     </select>
                 </div>
+
                 <ul>
                     <p className={style.text}>Countries:</p>
                     {input.countriesId.length>0?
@@ -265,7 +276,11 @@ export default function Form(){
                     }
                 </ul>
 
-                <button className={style.buttonAdd} onClick={handelSubmit}>Add Activity</button>
+                <div>
+                    <button className={style.buttonAdd} onClick={handelSubmit}>Add Activity</button>
+                </div>
+
+                
 
 
                 
@@ -274,7 +289,10 @@ export default function Form(){
                
                 
                 
-            </form>}
+            </form>
+
+            
+            }
         </div>
         
     )

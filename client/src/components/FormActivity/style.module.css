@@ -1,18 +1,38 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&display=swap');
+
+
 .form {
-    width: 300px;
-    margin: 0 auto;
-    
-  }
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  
+  
+}
 
 .fieldset{
     
-    border: 1px solid #060616;
-    margin: 20px;
+  border: 0px solid #060616;
+  margin: 20px;
 }
 .legend{
-  background-color: #060616;
-  color: #b9ab99;
+  font-weight: 500;
+  color: #090919;
+  font-size: 40px;
+  font-family: 'Inspiration', cursive;
   padding: 3px 6px;
+  border: 1px solid;
+  text-shadow: 0px 5px 10px #b9ab99;
+
+ 
+}
+.label{
+  font-weight: 500;
+  color: #090919;
+  font-size: 30px;
+  font-family: 'Inspiration', cursive;
+  margin: 10px;
+  text-shadow: 0px 5px 10px #b9ab99;
 }
 
 .danger{
@@ -20,74 +40,77 @@
   font-size: 15px;
 }
 .buttonHome{
-  display: flex;
-  margin-top: 10px;
-  margin-left:650px ;
-  margin-right: 650px ;
-  margin-bottom: 20px;
-  
-  text-decoration: none;
-  width: 75px;
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 20px;
+  box-shadow: inset 0px 1px 0px 0px #2d3454;
+  background: linear-gradient(to bottom, #21213c 5%, #21213c 100%);
+  background-color: #21213c;
+  border-radius: 10px;
   border: 1px solid #4e4542;
-  background: #21213c;
-  text-align: center;
-  color: #b9ab99;
-  border-radius: 5px 5px 5px 5px;
+  display: inline-block;
   cursor: pointer;
-  
-  
-  text-shadow: 0px 5px 10px #b9ab99;
+  color: #e4e2e0;
+  font-family:'Inspiration', cursive;
+  font-size: 40px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 7px 30px;
+  margin-left: 30px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #b9ab99 ;
+  margin-left: 20px;
+  max-width: 400px;
+  -webkit-text-stroke: 0.1px #060616;
 
 }
 .title{
   color: #b9ab99;
-  font-family: inherit;
-  text-shadow: 0px 2px 12px #b9ab99;
-  font-weight: 600;
-  font-size: 50px;
-  margin: 10px;
-  padding: 10px;
+  font-family:'Inspiration', cursive;
+  text-shadow: 0px 5px 10px #b9ab99;
+  font-weight: 800;
+  font-size: 90px;
+  margin: 20px;
+  padding: 20px;
   align-content: center;
+  -webkit-text-stroke: 0.1px #060616;
 }
 
 .text{
-  color: #b9ab99;
-  font-family: inherit;
-  text-shadow: 0px 2px 12px #b9ab99;
-  font-weight: 400;
-  font-size: 25px;
-  margin: 1px;
-  padding: 1px;
-  align-content: center;
+  font-weight: 500;
+  color: #090919;
+  font-size: 50px;
+  font-family: 'Inspiration', cursive;
+  margin: 10px;
+  text-shadow: 0px 5px 10px #b9ab99;
 }
 .text2{
-  color: #b9ab99;
-  font-family: inherit;
-  text-shadow: 0px 2px 12px #b9ab99;
-  font-weight: 600;
-  font-size: 15px;
-  margin: 1px;
-  padding: 1px;
-  align-content: center;
+  font-weight: 500;
+  color: #090919;
+  font-size: 30px;
+  font-family: 'Inspiration', cursive;
+  margin: 20px;
+  
+  text-shadow: 0px 5px 10px #b9ab99;
 }
 .buttonAdd{
-  width: 150px;
-  height: 50px;
-  border: 1px solid #1b2428;
-  background: #21213c;
-  text-align: center;
-  
-  border-radius: 5px 5px 5px 5px;
+  box-shadow: inset 0px 1px 0px 0px #2d3454;
+  background: linear-gradient(to bottom, #21213c 5%, #21213c 100%);
+  background-color: #21213c;
+  border-radius: 10px;
+  border: 1px solid #4e4542;
+  display: inline-block;
   cursor: pointer;
-  font-size: 20px;
-  color: #b9ab99;
-  text-shadow: 0px 5px 10px #b9ab99;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  font-weight: 600;
+  color: #e4e2e0;
+  font-family:'Inspiration', cursive;
+  font-size: 40px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 7px 30px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #b9ab99 ;
+  margin-left: 20px;
+  max-width: 400px;
+  -webkit-text-stroke: 0.1px #060616;
 
 }
 .buttonAdd:hover {
@@ -99,10 +122,12 @@
   width: 150px;
   border: 3px solid #1b2428;
   padding: 5px;
-  height: 20px;
+  height: 40px;
   border-radius: 5px 5px 5px 5px;
   outline: none;
   color: #060616;
+  font-family: 'Inspiration', cursive;
+  font-size: 35px;
 }
 
 .buttonDelete{
@@ -118,30 +143,42 @@
 }
 .buttonNewActivity{
 
-  width: 200px;
-  height: 50px;
-  border: 1px solid #1b2428;
-  background: #21213c;
-  text-align: center;
-  
-  border-radius: 5px 5px 5px 5px;
+  box-shadow: inset 0px 1px 0px 0px #2d3454;
+  background: linear-gradient(to bottom, #21213c 5%, #21213c 100%);
+  background-color: #21213c;
+  border-radius: 10px;
+  border: 1px solid #4e4542;
+  display: inline-block;
   cursor: pointer;
-  font-size: 20px;
-  color: #b9ab99;
-  text-shadow: 0px 5px 10px #b9ab99;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  font-weight: 600;
-
+  color: #e4e2e0;
+  font-family:'Inspiration', cursive;
+  font-size: 40px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 7px 30px;
+  margin-left: 30px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #b9ab99 ;
+  margin-left: 20px;
+  max-width: 400px;
+  -webkit-text-stroke: 0.1px #060616;
 }
-
+.buttonNewActivity:hover {
+  background: linear-gradient(to bottom, #21213c 55%, #b9ab99 100%);
+  background-color: #b9ab99 ;
+}
+.buttonHome:hover {
+  background: linear-gradient(to bottom, #21213c 55%, #b9ab99 100%);
+  background-color: #b9ab99 ;
+}
 .text3{
-  color: #b9ab99;
-  font-family: inherit;
-  text-shadow: 0px 2px 12px #b9ab99;
-  font-weight: 400;
-  font-size: 35px;
+  font-weight: 500;
+  color: #090919;
+  font-size: 100px;
+  font-family: 'Inspiration', cursive;
   margin: 10px;
-  padding: 10px;
-  align-content: center;
+ 
+  text-shadow: 0px 5px 10px #b9ab99;
 }

@@ -1,49 +1,69 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&display=swap');
+
+
 .container{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
-    max-width: 350px;
-    width: 90%;
+    justify-content: space-evenly;
+    max-width: 100%;
+    width: 1000px;
     margin:20px;
-    height: auto;
+    height: 40%;
     border-radius:20px ;
     position: relative;
     border: 2px solid #21213c ;
-    padding: 10px;
-    padding-bottom:20px ;
-    background-color: #1b2428;
+    padding: 20px;
+    margin-bottom: -90px;
+    background-color: rgb(27, 36, 40);
+  
 }
 
-.img{
+/* .img{
     height: 200px;
     width: 90%;
     border-radius: 5px;
     margin-bottom: 15px;
     
+} */
+.img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.cat {
+    display: flex;
+    height: 70px;
+    width: 200px;
 }
 
 .name2{
     font-weight: 500;
     color: #b9ab99;
     font-size: 25px;
+    font-family:'Inspiration', cursive;
+ 
 }
 
 .description{
     font-weight: 500;
     color: #b9ab99;
-    font-size: 20px;
+    font-size: 30px;
+    font-family: 'Inspiration', cursive;
+
 
 }
 
 .name {
     color: #b9ab99;
-    font-family: inherit;
-    text-shadow: 0px 2px 12px #b9ab99;
-    font-weight: 600;
-    font-size: 30px;
+    /* text-shadow: 0px 2px 12px #b9ab99; */
+    font-size: 50px;
     margin: 20px;
     padding: 20px;
     align-content: center;
     text-decoration: none;
+    font-family: 'Inspiration', cursive;
+
     
 }
