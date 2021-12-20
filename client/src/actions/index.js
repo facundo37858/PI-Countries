@@ -11,7 +11,7 @@ import axios from 'axios'
 export function getCountries(){
     return async function (dispach){
 
-        let countries= await axios.get('http://localhost:3001/countries')
+        let countries= await axios.get('/countries')
         .then((json)=>{return json.data})
 
         
@@ -28,7 +28,7 @@ export function getCountries(){
 export function searchCountry(name){
     return async function(dispach){
 
-        let countryResult=await axios.get(`http://localhost:3001/countries?name=${name}`)
+        let countryResult=await axios.get(`/countries?name=${name}`)
         .then((json)=>{return json.data})
 
         return dispach({
@@ -57,7 +57,7 @@ export function getActivities(){
 
     return async function(dispach){
 
-        let activities= await axios.get('http://localhost:3001/activities')
+        let activities= await axios.get('/activities')
         .then((json)=>json.data)
 
         return dispach({
@@ -93,7 +93,7 @@ export function order(typeOrder){
 export function addActivity(activity){
     return async function(dispach){
 
-        let addActivity= await axios.post('http://localhost:3001/activity',activity)
+        let addActivity= await axios.post('/activity',activity)
         .then(json=>json.data)
         console.log('addActivity',addActivity)
 
