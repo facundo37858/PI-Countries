@@ -1,5 +1,6 @@
 
 
+import { filterByContinent } from "../actions";
 import { GET_COUNTRIES, GET_COUNTRY_BY_NAME, FILTER_BY_CONTINENT, FILTER_BY_ACTIVITY, GET_ACTIVITIES, ORDER,
      POST_ACTIVITY, NEW_ACTIVITY, GET_COUNTRIES_BY_ID, ORDER_BY_POPULATION, ORDER_BY_AREA} from "../actions/constants";
 
@@ -69,6 +70,8 @@ export default function rootReducer(state=initialState,action){
             // let allCountries=state.countriesBackup
             
             if(action.payload==='all'){
+
+              
                 return{
                     ...state,
                     countries:state.countriesBackup,
@@ -78,8 +81,11 @@ export default function rootReducer(state=initialState,action){
             if(state.filterByActivity.length>0){
                 return{
                     ...state,
-                    countries:state.filterByActivity.filter(country=>country.continent===action.payload)
+                    countries:state.filterByActivity.filter(country=>country.continent===action.payload),
+                    
+                    
                 }
+
             }
           
             return{
@@ -95,6 +101,9 @@ export default function rootReducer(state=initialState,action){
             
                         
             if(action.payload==='all'){
+
+               
+
                 return{
                     ...state,
                     countries:state.countriesBackup,
