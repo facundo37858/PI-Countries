@@ -83,17 +83,42 @@ export default function Home(){
 
         <div>
             <h1 className={style.title}> Countries</h1>
+
             <div>
                 <NavBar handelPiginet={handelPiginet}></NavBar>
             </div>
-            <div>
+            
+{/*             
+                <div>
                 
-               <Cards countries={currenCountries}></Cards>
-            </div>
-            <div>
-                <Paginacion countriesPerPage={countriesPerPage} handelPiginet={handelPiginet} 
-                totalCountries={countriesAll.length} handelPrevPage={handelPrevPage} handelNextPage={handelNextPage}></Paginacion>
-            </div>
+                    <Cards countries={currenCountries}></Cards>
+                </div>
+
+                <div>
+                    <Paginacion countriesPerPage={countriesPerPage} handelPiginet={handelPiginet} 
+                    totalCountries={countriesAll.length} handelPrevPage={handelPrevPage} handelNextPage={handelNextPage}></Paginacion>
+                </div> */}
+            
+            
+            
+             {countriesAll.length>0?
+            <>
+                <div>
+                
+                    <Cards countries={currenCountries}></Cards>
+                </div>
+
+                <div>
+                    <Paginacion countriesPerPage={countriesPerPage} handelPiginet={handelPiginet} 
+                    totalCountries={countriesAll.length} handelPrevPage={handelPrevPage} handelNextPage={handelNextPage}></Paginacion>
+                </div>
+            </>:
+            <p className={style.notFound}>Not Found Countries</p>} 
+          
+        
+        
+            
+           
 
             
 
