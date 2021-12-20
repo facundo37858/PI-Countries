@@ -13,7 +13,7 @@ export default function Card({name,image,continent,id}){
             </div>
            
            
-            <Link to={`/details/${id}`}  style={{ textDecoration: 'none' }}><p className={style.name}>{name}</p></Link>
+            <span className={style.name}>{name}</span> <Link className={style.name}to={`/details/${id}`}  style={{ textDecoration: 'none' }}><span className={style.plusInfo}>+Info</span></Link>
            
            
             <p className={style.description}>{continent}</p>
