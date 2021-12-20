@@ -67,3 +67,15 @@
 
     
 }
+
+.plusInfo{
+    color: #b9ab99;
+    /* text-shadow: 0px 2px 12px #b9ab99; */
+    font-size: 30px;
+    margin: 1px;
+    padding:1px;
+    align-content: center;
+    text-decoration: none;
+    font-family: 'Inspiration', cursive;
+}
+

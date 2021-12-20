@@ -1,0 +1,28 @@
+
+
+
+
+.contenedorActivity{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius:20px ;
+    border: 2px solid #21213c ;
+    background-color: #b9ab99;
+    margin-top: 20px;
+    
+    
+}
+
+.text{
+    color: #b9ab99;
+    font-family: 'Inspiration', cursive;;
+    text-shadow: 0px 2px 12px #b9ab99;
+    font-weight: 600;
+    font-size: 35px;
+    margin: 10px;
+    padding: 10px;
+    align-content: center;
+    -webkit-text-stroke: 0.1px #060616;
+}

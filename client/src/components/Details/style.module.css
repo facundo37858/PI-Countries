@@ -1,105 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&display=swap');
+
+
+
 .buttonHome{
-    display: flex;
-    margin-top: 10px;
-    margin-left:650px ;
-    margin-right: 650px ;
-    margin-bottom: 20px;
-    
-    text-decoration: none;
-    width: 75px;
-    font-family: inherit;
-    font-weight: 700;
-    font-size: 20px;
+    box-shadow: inset 0px 1px 0px 0px #2d3454;
+    background: linear-gradient(to bottom, #21213c 5%, #21213c 100%);
+    background-color: #21213c;
+    border-radius: 10px;
     border: 1px solid #4e4542;
-    background: #21213c;
-    text-align: center;
-    color: #b9ab99;
-    border-radius: 5px 5px 5px 5px;
+    display: inline-block;
     cursor: pointer;
-    
-    
-    text-shadow: 0px 5px 10px #b9ab99;
+    color: #e4e2e0;
+    font-family:'Inspiration', cursive;
+    font-size: 40px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 7px 30px;
+    margin-left: 30px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #b9ab99 ;
+    margin-left: 20px;
+    max-width: 400px;
+    -webkit-text-stroke: 0.1px #060616;
   
+}
+.buttonHome:hover {
+    background: linear-gradient(to bottom, #21213c 55%, #b9ab99 100%);
+    background-color: #b9ab99 ;
 }
 .title{
     color: #b9ab99;
-    font-family: inherit;
+    font-family: 'Inspiration', cursive;;
     text-shadow: 0px 2px 12px #b9ab99;
     font-weight: 600;
-    font-size: 30px;
+    font-size: 100px;
     margin: 10px;
     padding: 10px;
     align-content: center;
+    -webkit-text-stroke: 0.1px #060616;
 }
 .title2{
     color: #b9ab99;
-    font-family: inherit;
+    font-family: 'Inspiration', cursive;;
+    text-shadow: 0px 2px 12px #b9ab99;
+    font-weight: 600;
+    font-size: 90px;
+    margin: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    align-content: center;
+    -webkit-text-stroke: 0.1px #060616;
+}
+
+.description{
+    color: #b9ab99;
+    font-family: 'Inspiration', cursive;;
+    text-shadow: 0px 2px 12px #b9ab99;
+    font-weight: 600;
+    font-size: 50px;
+    margin: 10px;
+    padding: 10px;
+    align-content: center;
+    -webkit-text-stroke: 0.1px #060616;
+}
+
+
+.text2{
+    color: #b9ab99;
+    font-family: 'Inspiration', cursive;;
     text-shadow: 0px 2px 12px #b9ab99;
     font-weight: 600;
     font-size: 30px;
     margin: 10px;
     padding: 10px;
     align-content: center;
+    -webkit-text-stroke: 0.1px #060616;
 }
-.text{
-    color: #b9ab99;
-    font-family: inherit;
-    text-shadow: 0px 2px 12px #b9ab99;
-    font-weight: 400;
-    font-size: 25px;
-    margin: 4px;
-    padding: 1px;
-    align-content: center;
-}
-.description{
-    font-weight: 500;
-    color: #b9ab99;
-    font-size: 20px;
 
-}
-.text2{
-    color: #b9ab99;
-    font-family: inherit;
-    text-shadow: 0px 2px 12px #b9ab99;
-    font-weight: 600;
-    font-size: 20px;
-    margin: 1px;
-    padding: 1px;
-    align-content: center;
-}
 
 .text3{
     color: #b9ab99;
-    font-family: inherit;
+    font-family: 'Inspiration', cursive;;
     text-shadow: 0px 2px 12px #b9ab99;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 20px;
     margin: 10px;
     padding: 10px;
     align-content: center;
+    -webkit-text-stroke: 0.1px #060616;
+
 }
 
 .contenedor{
     display: grid;
-    
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 .contenedor2{
-    display: grid;
-    grid-template-columns: 2fr 2fr ;
-    grid-template-rows: 4fr;
-    margin-top: 100px;
-    margin-left: 10px;
-    margin-right: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  border-top: #b9ab99 solid;
+  
 }
 
 .contenedorInfo{
-    display: grid;
-    grid-template-columns: 2fr 2fr;
-  
+    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin-left: 100px;
     margin-right: 100px;
+    margin-top: 20px;
+    border-radius:20px ;
+    border: 2px solid #21213c ;
+    background-color: #b9ab99; ;
 
+}
+.conteinerCardDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom:20px ;
+    
 }
