@@ -135,7 +135,7 @@ export function getCountriesById(id){
 
     return async function(dispach){
 
-        let countriById= await axios.get(`http://localhost:3001/countries/${id}`)
+        let countriById= await axios.get(`/countries/${id}`)
         .then(json=>json.data)
 
         return dispach({
